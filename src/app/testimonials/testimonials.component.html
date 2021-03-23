@@ -1,0 +1,90 @@
+<!--Testimonials-->
+<aside id="testimonials" class="scrollto text-center" data-enllax-ratio=".2">
+
+  <div class="row clearfix">
+
+    <div class="section-heading">
+      <h3>FEEDBACK</h3>
+      <h2 class="section-title">What our customers are saying</h2>
+    </div>
+
+    <!--User Testimonial-->
+    <blockquote class="col-3 testimonial classic">
+      <img src="../assets/images/user-images/user-1.jpg" alt="User" />
+      <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore
+        et dolore magna aliqua</q>
+      <footer>John Doe - Happy Customer</footer>
+    </blockquote>
+    <!-- End of Testimonial-->
+
+    <!--User Testimonial-->
+    <blockquote class="col-3 testimonial classic">
+      <img src="../assets/images/user-images/user-2.jpg" alt="User" />
+      <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore
+        et dolore magna aliqua</q>
+      <footer>Roslyn Doe - Happy Customer</footer>
+    </blockquote>
+    <!-- End of Testimonial-->
+
+    <!--User Testimonial-->
+    <blockquote class="col-3 testimonial classic">
+      <img src="../assets/images/user-images/user-3.jpg" alt="User" />
+      <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore
+        et dolore magna aliqua</q>
+      <footer>Thomas Doe - Happy Customer</footer>
+    </blockquote>
+    <!-- End of Testimonial-->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h1 class="page-title">Login</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email"
+                     class="form-control"
+                     formControlName="email">
+            </div>
+            <div *ngIf="isValidInput('email')"
+                 class="alert alert-danger">
+              <div *ngIf="loginForm.controls['email'].errors.required">
+                Email is required.
+              </div>
+              <div *ngIf="loginForm.controls['email'].errors.pattern">
+                Must be a valid email format.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password"
+                     class="form-control"
+                     formControlName ="password">
+            </div>
+            <div *ngIf="isValidInput('password')"
+                 class="alert alert-danger">
+              <div *ngIf="loginForm.controls['password'].errors.required">
+                Password is required.
+              </div>
+            </div>
+
+            <button
+              [disabled]="!loginForm.valid"
+              type="submit"
+              class="btn btn-warning"
+            >Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</aside>
+
+
+<!--End of Testimonials-->
